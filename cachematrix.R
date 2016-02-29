@@ -4,16 +4,16 @@
 
 ## my solution: the two functions makeCacheMatrix and cacheSolve try to find the inverse of a computed matrix
 
-## makeCacheMatrix stores a matrix and a cached value
-## This function creates a special "matrix" object that can cache its inverse.
+## makeCacheMatrix stores a matrix and a cached value to create a matrix object that can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
   # set the initial value to null 
   elc <- NULL
   # store a matrix
- set <- function(y) { 
+  set <- function(y) { 
     x <<- y
     elc <<- NULL
   }
+  
   get <- function() x
   setreverse<- function(reverse) elc <<-reverse
   getreverse <- function() elc
@@ -25,9 +25,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function computes the inverse of the special "matrix" created by 
-## makeCacheMatrix above. If the inverse has already been calculated (and the 
-## matrix has not changed), then it should retrieve the inverse from the cache.
+## cacheSolve computes the inverse of the  matrix created by 
+## makeCacheMatrix. The function would retrieve the inverse from the cache
+## if the inverse has already been calculated.
+
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
