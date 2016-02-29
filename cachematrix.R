@@ -30,8 +30,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## if the inverse has already been calculated.
 
 
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+cacheSolve <- function(x) {
+  ## Return a matrix that is the inverse of 'x'
 
   elc <- x$getreverse()
   if (!is.null(elc)) {
